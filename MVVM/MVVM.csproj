@@ -87,9 +87,11 @@
     <Compile Include="Data\UserData\UserData.cs" />
     <Compile Include="Infrastructure\Commands\Base\Command.cs" />
     <Compile Include="Infrastructure\Commands\LamdaCommand.cs" />
+    <Compile Include="Models\MainPage\NewsModel.cs" />
     <Compile Include="Models\Personal data\UserDataModel.cs" />
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
     <Compile Include="ViewModels\Views\MainPages\MainPageAdminViewModel.cs" />
+    <Compile Include="ViewModels\Views\MainPageViewModel.cs" />
     <Compile Include="ViewModels\Windows\MainProgramWindowViewModel.cs" />
     <Compile Include="ViewModels\Windows\MainWindowViewModel.cs" />
     <Compile Include="Views\Views\MainPages\MainPageAdminView.xaml.cs">

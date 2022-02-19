@@ -1,11 +1,6 @@
 ﻿using MVVM.Models.Personal_data;
 using MVVM.ViewModels.Base;
 using MVVM.Views.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MVVM.ViewModels.Views.MainPages
 {
