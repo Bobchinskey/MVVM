@@ -91,6 +91,8 @@ namespace MVVM.ViewModels.Windows
 
         #endregion
 
+        /*------------------------------------------------------------------------------------------------*/
+
         public MainWindowViewModel()
         {
             #region Команды
