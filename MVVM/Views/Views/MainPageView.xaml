@@ -27,15 +27,21 @@
                               HorizontalAlignment="Center">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock FontSize="16" Text="{Binding heading}"
-                                           HorizontalAlignment="Center"
-                                           FontWeight="Bold"/>
-                                    <TextBlock FontSize="10" Text="{Binding news}" 
+                                <Border BorderBrush="Black" BorderThickness="0.5">
+                                    <StackPanel Margin="5">
+                                        <Grid>
+                                            <TextBlock FontSize="8" Text="{Binding date_publication,StringFormat={}{0:dd.MM.yyyy}}"
+                                               HorizontalAlignment="Left"/>
+                                            <TextBlock FontSize="16" Text="{Binding heading}"
+                                                       HorizontalAlignment="Center"
+                                                       FontWeight="Bold"/>
+                                        </Grid>
+                                        <TextBlock FontSize="10" Text="{Binding news}" 
                                            TextWrapping="Wrap" 
                                            MaxWidth="250"
                                            HorizontalAlignment="Left"/>
-                                </StackPanel>
+                                    </StackPanel>
+                                </Border>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
@@ -48,12 +54,35 @@
                Width="auto" Height="auto"
                Margin="20"/>
         <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2">
-            <StackPanel>
-                <TextBlock HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Text="Важная информация"/>
-                <ListView HorizontalAlignment="Stretch">
-                    
-                </ListView>
-            </StackPanel>
+            <Viewbox  Grid.Column="2" VerticalAlignment="Top">
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Text="Важная информация"/>
+                    <ListView ItemsSource="{Binding ImportantInformation}" 
+                              Margin="0,10,0,0"
+                              Width="auto" 
+                              HorizontalAlignment="Center">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="Black" BorderThickness="0.5">
+                                    <StackPanel Margin="5">
+                                        <Grid>
+                                            <TextBlock FontSize="8" Text="{Binding date_publication,StringFormat={}{0:dd.MM.yyyy}}"
+                                               HorizontalAlignment="Left"/>
+                                            <TextBlock FontSize="16" Text="{Binding heading}"
+                                                       HorizontalAlignment="Center"
+                                                       FontWeight="Bold"/>
+                                        </Grid>
+                                        <TextBlock FontSize="10" Text="{Binding important_information}" 
+                                           TextWrapping="Wrap" 
+                                           MaxWidth="250"
+                                           HorizontalAlignment="Left"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </Viewbox>
         </Border>
     </Grid>
 </Page>

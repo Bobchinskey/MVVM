@@ -1,32 +1,30 @@
-﻿using MVVM.Models.MainPage;
-using MVVM.ViewModels.Base;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using MVVM.ViewModels.Base;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace MVVM.ViewModels.Views
 {
     class MainPageViewModel : ViewModelBase
     {
         public DataView News { get; }
+        public DataView ImportantInformation { get; }
         public MainPageViewModel()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["Diplom"].ConnectionString;
-            DataTable dt = new DataTable();
+            DataTable DataTableBaseNewsPresenter = new DataTable();
+            DataTable DataTableBaseImportantInformationPresenter = new DataTable();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = new SqlCommand("select [heading],[news] from [News]", connection);
-                adapter.Fill(dt);
+                SqlDataAdapter NewsAdapter = new SqlDataAdapter();
+                SqlDataAdapter ImportantInformationAdapter = new SqlDataAdapter();
+                NewsAdapter.SelectCommand = new SqlCommand("select Top(10) [id_news],[date_publication],[heading],[news] from [News] ORDER BY [id_news] desc", connection);
+                NewsAdapter.Fill(DataTableBaseNewsPresenter);
+                ImportantInformationAdapter.SelectCommand = new SqlCommand("select Top(10) [id_important_information],[date_publication],[heading],[important_information] from [Important_information] ORDER BY [id_important_information] desc", connection);
+                ImportantInformationAdapter.Fill(DataTableBaseImportantInformationPresenter);
             }
-            News = dt.DefaultView;
+            News = DataTableBaseNewsPresenter.DefaultView;
+            ImportantInformation = DataTableBaseImportantInformationPresenter.DefaultView;
         }
     }
 }
