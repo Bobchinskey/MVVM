@@ -67,6 +67,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Views\MainPages\MainPageManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Views\MainPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,11 +95,15 @@
     <Compile Include="Models\Personal data\UserDataModel.cs" />
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
     <Compile Include="ViewModels\Views\MainPages\MainPageAdminViewModel.cs" />
+    <Compile Include="ViewModels\Views\MainPages\MainPageManagerViewModel.cs" />
     <Compile Include="ViewModels\Views\MainPageViewModel.cs" />
     <Compile Include="ViewModels\Windows\MainProgramWindowViewModel.cs" />
     <Compile Include="ViewModels\Windows\MainWindowViewModel.cs" />
     <Compile Include="Views\Views\MainPages\MainPageAdminView.xaml.cs">
       <DependentUpon>MainPageAdminView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Views\MainPages\MainPageManagerView.xaml.cs">
+      <DependentUpon>MainPageManagerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Views\MainPageView.xaml.cs">
       <DependentUpon>MainPageView.xaml</DependentUpon>

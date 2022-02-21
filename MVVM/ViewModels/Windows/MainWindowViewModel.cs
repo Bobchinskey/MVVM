@@ -49,6 +49,8 @@ namespace MVVM.ViewModels.Windows
 
         #region Команды
 
+        #region Команда авторизации пользователя
+
         public ICommand AuthorizationModuleCommand { get; }
 
         private bool CanAuthorizationModuleExecute(object p) => true;
@@ -69,6 +71,8 @@ namespace MVVM.ViewModels.Windows
                         HistoryUserInputBackUpProcedure mHistoryUserInputBackUpProcedure = new HistoryUserInputBackUpProcedure(UserDataModel.id_user);
                         if (UserDataModel.access_lavel == "Администратор")
                             UserDataModel.page = new MainPageAdminView();
+                        else  if (UserDataModel.access_lavel == "Менеджер")
+                            UserDataModel.page = new MainPageManagerView();
                         MainProgramWindow mainProgramWindow = new MainProgramWindow();
                         mainProgramWindow.Show();
                         foreach (System.Windows.Window window in System.Windows.Application.Current.Windows)
@@ -88,6 +92,8 @@ namespace MVVM.ViewModels.Windows
             else
                 MessageBox.Show("Введите логин");
         }
+
+        #endregion
 
         #endregion
 
