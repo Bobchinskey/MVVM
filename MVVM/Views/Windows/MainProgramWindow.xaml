@@ -10,7 +10,7 @@
         Title="{Binding Title}"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
-        MinHeight="400" MinWidth="320"
+        MinHeight="600" MinWidth="1000"
         Icon="/Resources/Pictures/MainIconWindow.png">
     <Window.DataContext>
         <DataContext:MainProgramWindowViewModel/>
