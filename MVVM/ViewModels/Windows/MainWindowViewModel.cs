@@ -14,6 +14,16 @@ namespace MVVM.ViewModels.Windows
 {
     class MainWindowViewModel : ViewModelBase
     {
+
+        private string _Tiltle = "";
+
+        /// <summary>Login</summary>
+        public string Tiltle
+        {
+            get => _Tiltle;
+            set => Set(ref _Tiltle, value);
+        }
+
         #region Данные Авторизации
 
         #region Login : TextBox
